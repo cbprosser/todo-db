@@ -8,12 +8,12 @@ CREATE TABLE IF NOT EXISTS public.ae_user_to_list
     list_id uuid NOT NULL,
     CONSTRAINT ae_user_to_list_composite_key PRIMARY KEY (user_id, list_id),
     CONSTRAINT "list_id_to_list.id" FOREIGN KEY (list_id)
-        REFERENCES public.list (id) MATCH SIMPLE
+        REFERENCES public.list (list_id) MATCH SIMPLE
         ON UPDATE NO ACTION
-        ON DELETE CASCADE
+        ON DELETE NO ACTION
         NOT VALID,
     CONSTRAINT "user_id_to_user.id" FOREIGN KEY (user_id)
-        REFERENCES public."user" (id) MATCH SIMPLE
+        REFERENCES public."user" (user_id) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
 )

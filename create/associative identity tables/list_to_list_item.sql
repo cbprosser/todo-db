@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS public.ae_list_to_list_item
     CONSTRAINT "ae_list_item_id_to_list_item.id" FOREIGN KEY (list_item_id)
         REFERENCES public.list_item (list_item_id) MATCH SIMPLE
         ON UPDATE NO ACTION
-        ON DELETE CASCADE
+        ON DELETE NO ACTION
         NOT VALID
 )
 
